@@ -21,8 +21,8 @@
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/1200px-Spotify_logo_without_text.svg.png" alt="Spotify logo">
 
       <select @change="getRecords()" v-model="genreSelected">
-          <option value="null">{{firstOption}}</option>
-          <option v-for="(genre, index) of musicGenres" :key="index" :value="genre">{{genre}}</option>
+          <option :value="musicGenres[0]">{{firstOption}}</option>
+          <option v-for="(genre, index) of musicGenres.slice(1,musicGenres.length)" :key="index" :value="genre">{{genre}}</option>
         </select>
 
     </header>
@@ -30,6 +30,14 @@
     <div class="container">
       <h1>Dischi</h1>
 
+      <div class="input-group mb-3">
+        <input type="text" v-model="newTitle">
+        <input type="text" v-model="newAuthor">
+        <input type="text" v-model="newYear">
+        <input type="text" v-model="newPoster">
+        <input type="text" v-model="newGenre">
+        <button @click="addRecord()" class="btn btn-outline-warning" type="button" id="button-add">Inserisci</button>
+        </div>
         <div class="record-area">
           <div class="record-card"
           v-for="(record, index) in records" :key="index"
