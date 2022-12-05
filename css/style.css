@@ -1,5 +1,93 @@
+:root {
+  --body-background-color: rgb(29, 45, 60);
+  --card-background-color: rgb(17, 32, 48);
+  --info-background-color: rgba(29, 45, 60, 0.9);
+}
+
 *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+body {
+  background-color: var(--body-background-color);
+}
+
+.container {
+  max-width: 1280px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+h1 {
+  color: white;
+}
+
+.record-area {
+  display: flex;
+  flex-wrap: wrap;
+}
+.record-card {
+  margin: 20px auto;
+  padding: 0 30px;
+  padding-top: 20px;
+  background-color: var(--card-background-color);
+  color: white;
+  text-align: center;
+  width: calc(calc(100% - 50px) / 3);
+  aspect-ratio: 1;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.record-card img {
+  width: 100%;
+}
+
+.record-card span {
+  display: block;
+}
+
+.record-card .author {
+  font-size: 13px;
+}
+
+.record-card .year {
+  font-weight: 800;
+}
+
+.info-record {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: var(--info-background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
+
+.close-info {
+  width: 30px;
+  aspect-ratio: 1;
+  background: none;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  color: white;
+}
+
+.img-info {
+  width: 350px;
+}
+
+.img-info img {
+  width: 100%
 }

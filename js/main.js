@@ -4,7 +4,9 @@ createApp({
   data(){
     return{
       apiUrl: 'server.php',
-      records: []
+      records: [],
+      showInfo: false,
+      selectedRecord: {}
     }
   },
   methods:{
@@ -14,6 +16,13 @@ createApp({
         this.records = result.data;
       })
     },
+    selectRecord(index){
+      this.selectedRecord = this.records[index];
+      this.showInfo = true;
+    },
+    closeInfo(){
+      this.showInfo= false;
+    }
   },
   mounted(){
     this.getRecords();
