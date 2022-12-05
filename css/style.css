@@ -14,10 +14,18 @@ body {
   background-color: var(--body-background-color);
 }
 
+header {
+  height: 100px;
+}
+
 .container {
   max-width: 1280px;
   width: 80%;
   margin: 0 auto;
+}
+
+header img{
+  height: 90px;
 }
 
 h1 {

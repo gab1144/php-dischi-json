@@ -6,18 +6,36 @@ createApp({
       apiUrl: 'server.php',
       records: [],
       showInfo: false,
-      selectedRecord: {}
+      selectedRecord: {},
+      genreSelected: null,
+      musicGenres: [
+        "Pop",
+        "Rock",
+        "Jazz",
+        "Metal"
+      ],
+      firstOption: "All genres"
     }
   },
   methods:{
     getRecords(){
-      axios.get(this.apiUrl)
+      const params = {
+        genre: this.genreSelected,
+        id: this.selectedIndex
+      }  
+      axios.get(this.apiUrl, {params})
       .then(result => {
         this.records = result.data;
       })
     },
     selectRecord(index){
-      this.selectedRecord = this.records[index];
+      const params = {
+        id: index
+      }  
+      axios.get(this.apiUrl, {params})
+      .then(result => {
+        this.selectedRecord = result.data;
+      })
       this.showInfo = true;
     },
     closeInfo(){

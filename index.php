@@ -17,6 +17,16 @@
 </head>
 <body>
   <div id="app">
+    <header>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/1200px-Spotify_logo_without_text.svg.png" alt="Spotify logo">
+
+      <select @change="getRecords()" v-model="genreSelected">
+          <option value="null">{{firstOption}}</option>
+          <option v-for="(genre, index) of musicGenres" :key="index" :value="genre">{{genre}}</option>
+        </select>
+
+    </header>
+
     <div class="container">
       <h1>Dischi</h1>
 
