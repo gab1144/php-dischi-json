@@ -62,6 +62,8 @@
       
       <span class="year">{{selectedRecord.year}}</span>
 
+      <button @click="deleteRecord()" class="btn btn-outline-warning" type="button">Elimina</button>
+        </div>
     </div>
   </div>
   <script src="./js/main.js"></script>

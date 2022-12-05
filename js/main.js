@@ -20,7 +20,8 @@ createApp({
       newAuthor: "",
       newYear: "",
       newPoster: "",
-      newGenre: ""
+      newGenre: "",
+      indexSelected: null
     }
   },
   methods:{
@@ -35,6 +36,7 @@ createApp({
       })
     },
     selectRecord(index){
+      this.indexSelected = index;
       const params = {
         id: index
       }  
@@ -71,6 +73,16 @@ createApp({
         })
 
     },
+    deleteRecord(){
+    const data = new FormData();
+      data.append('deleteRecord', this.indexSelected);
+        
+      axios.post(this.apiUrl, data)
+      .then(result => {
+        this.records = result.data;
+        this.closeInfo();
+      })
+    }
   },
   mounted(){
     this.getRecords();

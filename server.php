@@ -29,5 +29,12 @@ if(isset($_POST['title'])){
   file_put_contents('dischi.json', json_encode($list));
 }
 
+if(isset($_POST['deleteRecord'])){
+
+  array_splice($list,$_POST['deleteRecord'],1);
+
+  file_put_contents('dischi.json', json_encode($list));
+}
+
 header('Content-Type: application/json');
 echo json_encode($list);
