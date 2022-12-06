@@ -2,6 +2,7 @@
   --body-background-color: rgb(29, 45, 60);
   --card-background-color: rgb(17, 32, 48);
   --info-background-color: rgba(29, 45, 60, 0.9);
+  --header-background-color: rgb(6, 19, 31);
 }
 
 *{
@@ -12,10 +13,16 @@
 
 body {
   background-color: var(--body-background-color);
+  font-family: 'Lato', sans-serif;
 }
 
 header {
   height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  background-color: var(--header-background-color);
 }
 
 .container {
@@ -24,27 +31,71 @@ header {
   margin: 0 auto;
 }
 
+button {
+  padding: 10px;
+  background-color: var(--header-background-color);
+  color: white;
+  border: none;
+  border-radius: 10px;
+}
+
+select {
+  background-color: var(--body-background-color);
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+}
+
 header img{
-  height: 90px;
+  height: 60px;
 }
 
 h1 {
   color: white;
+  text-transform: uppercase;
+  margin: 30px 0;
+}
+
+.input-record {
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.input-record > div {
+  width: calc(100% / 3);
+  height: 50px;
+  padding: 0 30px;
+}
+
+.input-record span {
+  display: block;
+}
+
+.input-record input {
+  width: 100%;
+}
+
+.input-record .button-add-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .record-area {
   display: flex;
   flex-wrap: wrap;
+  padding: 40px 0;
 }
+
 .record-card {
   margin: 20px auto;
-  padding: 0 30px;
-  padding-top: 20px;
+  padding: 20px 30px;
   background-color: var(--card-background-color);
   color: white;
   text-align: center;
-  width: calc(calc(100% - 50px) / 3);
-  aspect-ratio: 1;
+  width: calc(calc(100% - 150px) / 3);
   border-radius: 7px;
   cursor: pointer;
 }
@@ -52,16 +103,20 @@ h1 {
 .record-card img {
   width: 100%;
 }
+.record-card h3 {
+  margin-top: 15px;
+}
 
 .record-card span {
   display: block;
 }
 
-.record-card .author {
+.author {
   font-size: 13px;
+  margin: 10px 0;
 }
 
-.record-card .year {
+.year {
   font-weight: 800;
 }
 
@@ -77,6 +132,14 @@ h1 {
   align-items: center;
   flex-direction: column;
   color: white;
+}
+
+.info-record > * {
+  padding: 5px 0;
+}
+
+.info-record button {
+  padding: 10px;
 }
 
 .close-info {
