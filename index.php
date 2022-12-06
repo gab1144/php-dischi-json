@@ -15,7 +15,7 @@
   <!-- VueJs -->
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-  <title>Document</title>
+  <title>Dischi</title>
 </head>
 <body>
   <div id="app">
