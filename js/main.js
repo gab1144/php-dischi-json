@@ -8,13 +8,7 @@ createApp({
       showInfo: false,
       selectedRecord: {},
       genreSelected: null,
-      musicGenres: [
-        null,
-        "Pop",
-        "Rock",
-        "Jazz",
-        "Metal"
-      ],
+      musicGenres: [],
       firstOption: "All genres",
       newTitle: "",
       newAuthor: "",
